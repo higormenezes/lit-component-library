@@ -1,0 +1,75 @@
+{
+  "name": "@wc/ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/mjs/index.mjs",
+  "types": "./dist/cjs/types.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/mjs/types.d.mts",
+        "default": "./dist/mjs/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      },
+      "types": "./dist/cjs/types.d.cts",
+      "default": "./dist/umd/index.js"
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/react/mjs/types.d.mts",
+        "default": "./dist/react/mjs/index.mjs"
+      },
+      "require": {
+        "types": "./dist/react/cjs/types.d.cts",
+        "default": "./dist/react/cjs/index.cjs"
+      },
+      "types": "./dist/react/cjs/types.d.cts",
+      "default": "./dist/react/umd/index.js"
+    },
+    "./theme.css": "./dist/theme.css"
+  },
+  "scripts": {
+    "build": "rm -r dist && rollup -c && cp -r src/theme dist/theme",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@lit/react": "^1.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-swc": "^0.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/test": "^8.0.0",
+    "@storybook/web-components": "^8.0.0",
+    "@storybook/web-components-vite": "^8.0.0",
+    "@types/react": "^18.2.64",
+    "lit": "^3",
+    "react": "^18.2.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.13.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "storybook": "^8.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.2"
+  },
+  "peerDependencies": {
+    "@lit/react": "^1.0.4",
+    "lit": "^3",
+    "react": "^18.2.0"
+  }
+}
