@@ -35,7 +35,7 @@ export default defineConfig([
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({}),
+      typescript(),
       // terser({
       //   ecma: 2020,
       // }),

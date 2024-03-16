@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/web-components"
 
 import "./Button"
-type ButtonProps = HTMLElementTagNameMap["lit-button"]
+type ButtonProps = HTMLElementTagNameMap["wc-button"]
 
 const meta = {
   title: "UI/Button",
   tags: ["autodocs"],
-  component: "lit-button",
+  component: "wc-button",
   args: {
     innerHTML: "Button",
   },

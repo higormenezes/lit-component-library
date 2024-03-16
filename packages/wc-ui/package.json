@@ -8,36 +8,38 @@
   ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/mjs/index.mjs",
-  "types": "./dist/cjs/types.d.cts",
+  "types": "./dist/cjs/exports.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/mjs/types.d.mts",
+        "types": "./dist/mjs/exports.d.ts",
         "default": "./dist/mjs/index.mjs"
       },
       "require": {
-        "types": "./dist/cjs/types.d.cts",
+        "types": "./dist/cjs/exports.d.ts",
         "default": "./dist/cjs/index.cjs"
       },
-      "types": "./dist/cjs/types.d.cts",
+      "types": "./dist/cjs/exports.d.ts",
       "default": "./dist/umd/index.js"
     },
     "./react": {
       "import": {
-        "types": "./dist/react/mjs/types.d.mts",
+        "types": "./dist/react/mjs/exports.react.d.ts",
         "default": "./dist/react/mjs/index.mjs"
       },
       "require": {
-        "types": "./dist/react/cjs/types.d.cts",
+        "types": "./dist/react/cjs/exports.react.d.ts",
         "default": "./dist/react/cjs/index.cjs"
       },
-      "types": "./dist/react/cjs/types.d.cts",
+      "types": "./dist/react/cjs/exports.react.d.ts",
       "default": "./dist/react/umd/index.js"
     },
-    "./theme.css": "./dist/theme.css"
+    "./theme/light/theme.css": "./dist/theme/light/theme.css",
+    "./theme/dark/theme.css": "./dist/theme/dark/theme.css",
+    "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "rm -r dist && rollup -c && cp -r src/theme dist/theme",
+    "build": "rimraf dist && rollup -c && cp -r src/theme dist/theme",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

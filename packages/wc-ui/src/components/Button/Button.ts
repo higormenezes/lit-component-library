@@ -24,6 +24,6 @@ export class WCButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "lit-button": WCButton
+    "wc-button": WCButton
   }
 }

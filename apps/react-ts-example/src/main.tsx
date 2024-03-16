@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import "@wc/ui/theme.css"
+import "@wc/ui/theme/dark/theme.css"
 import App from "./App.tsx"
 import "./index.css"
 

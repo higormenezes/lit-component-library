@@ -18,15 +18,15 @@ export const buttonDefaultStyle = css`
 
 export const buttonPrimaryStyle = css`
   & {
-    background: var(--wc-color-background-brand-default);
+    background: var(--wc-color-background-brand-bold-default);
     color: var(--wc-color-text-inverse);
 
     &:hover {
-      background: var(--wc-color-background-brand-hovered);
+      background: var(--wc-color-background-brand-bold-hovered);
       color: var(--wc-color-text-inverse);
     }
     &:active {
-      background: var(--wc-color-background-brand-pressed);
+      background: var(--wc-color-background-brand-bold-pressed);
       color: var(--wc-color-text-inverse);
     }
   }
@@ -51,16 +51,16 @@ export const buttonSubtleStyle = css`
 export const buttonLinkStyle = css`
   & {
     background: transparent;
-    color: var(--wc-color-text-link-default);
+    color: var(--wc-color-link-default);
 
     &:hover {
       background: transparent;
-      color: var(--wc-color-text-link-default);
+      color: var(--wc-color-link-default);
       text-decoration: underline;
     }
     &:active {
       background: transparent;
-      color: var(--wc-color-text-link-pressed);
+      color: var(--wc-color-link-pressed);
       text-decoration: underline;
     }
   }
@@ -86,7 +86,7 @@ export const buttonStyle = css`
     justify-content: center;
     height: 32px;
     padding: 0 var(--wc-space-150);
-    border-radius: var(--wc-shape-150);
+    border-radius: 3px;
 
     transition:
       background 150ms,
