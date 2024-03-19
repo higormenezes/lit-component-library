@@ -2,28 +2,26 @@ import { LitElement, html } from "lit"
 import { customElement, property } from "lit/decorators.js"
 import { classMap } from "lit/directives/class-map.js"
 
-import { buttonStyle } from "./Button.style"
+import { iconButtonStyle } from "./IconButton.style"
 
-type TAppearance = "default" | "primary" | "subtle" | "link"
-
-@customElement("wc-button")
-export class WCButton extends LitElement {
+@customElement("wc-icon-button")
+export class IconButton extends LitElement {
   static shadowRootOptions = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
   }
-  static styles = buttonStyle
+  static styles = iconButtonStyle
 
-  @property({ reflect: true })
-  appearance: TAppearance = "default"
+  @property({ type: Boolean, reflect: true })
+  selected = false
 
   @property({ type: Boolean, reflect: true })
   disabled = false
 
   render() {
     const classes = classMap({
-      "wc-button": true,
-      [`wc-button--${this.appearance}`]: true,
+      "wc-icon-button": true,
+      "wc-icon-button--selected": this.selected,
     })
 
     return html`<button class="${classes}" ?disabled="${this.disabled}">
@@ -34,6 +32,6 @@ export class WCButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "wc-button": WCButton
+    "wc-icon-button": IconButton
   }
 }

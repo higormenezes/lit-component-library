@@ -67,7 +67,11 @@ export const buttonLinkStyle = css`
 `
 
 export const buttonStyle = css`
-  button {
+  :host {
+    display: contents;
+  }
+
+  :host .wc-button {
     appearance: none;
     margin: 0;
     border: 0;
@@ -80,7 +84,7 @@ export const buttonStyle = css`
     line-height: 1;
     letter-spacing: 0.75px;
 
-    display: flex;
+    display: inline-flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
@@ -105,23 +109,23 @@ export const buttonStyle = css`
         outline-offset: 2px;
       }
 
-      &.default {
+      &.wc-button--default {
         ${buttonDefaultStyle};
       }
-      &.primary {
+      &.wc-button--primary {
         ${buttonPrimaryStyle};
       }
-      &.subtle {
+      &.wc-button--subtle {
         ${buttonSubtleStyle};
       }
-      &.link {
+      &.wc-button--link {
         ${buttonLinkStyle};
       }
     }
-  }
 
-  &:disabled {
-    background: var(--wc-color-background-disabled);
-    color: var(--wc-color-text-disabled);
+    &:disabled {
+      background: var(--wc-color-background-disabled);
+      color: var(--wc-color-text-disabled);
+    }
   }
 `

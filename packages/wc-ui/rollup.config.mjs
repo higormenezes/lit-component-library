@@ -9,6 +9,20 @@ import swc from "@rollup/plugin-swc"
 const input = "src/exports.ts"
 const reactInput = "src/exports.react.ts"
 
+const globals = {
+  lit: "_l",
+  "lit/decorators.js": "_ld",
+  "lit/directives/class-map.js": "_lcm",
+}
+
+const reactGlobals = {
+  lit: "_l",
+  "lit/decorators.js": "_ld",
+  "lit/directives/class-map.js": "_lcm",
+  "@lit/react": "lit_react",
+  react: "React",
+}
+
 export default defineConfig([
   {
     input,
@@ -26,13 +40,13 @@ export default defineConfig([
       {
         name: "component-library",
         file: "dist/umd/index.js",
-        globals: { lit: "_l", "lit/decorators.js": "_ld" },
+        globals,
         format: "umd",
         sourcemap: true,
       },
     ],
     plugins: [
-      peerDepsExternal(),
+      // peerDepsExternal(),
       resolve(),
       commonjs(),
       typescript(),
@@ -57,12 +71,7 @@ export default defineConfig([
       {
         name: "component-library",
         file: "dist/react/umd/index.js",
-        globals: {
-          lit: "lit",
-          "lit/decorators.js": "lit_decorators",
-          "@lit/react": "lit_react",
-          react: "React",
-        },
+        globals: reactGlobals,
         format: "umd",
         sourcemap: true,
       },

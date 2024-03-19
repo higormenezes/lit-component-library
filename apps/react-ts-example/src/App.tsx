@@ -20,7 +20,15 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <WCButton appearance="primary">count is {count}</WCButton>
+        <WCButton
+          appearance="primary"
+          onClick={() => setCount((count) => count + 1)}
+        >
+          count is {count}
+        </WCButton>
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
