@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/web-components"
 
-import "./PrimaryLink"
+import "./Link"
 
-type PrimaryLinkProps = HTMLElementTagNameMap["wc-top-nav-primary-link"]
+type LinkProps = HTMLElementTagNameMap["wc-top-nav-link"]
 
 const meta = {
-  title: "UI/TopNavigation/PrimaryLink",
+  title: "UI/TopNavigation/Link",
   tags: ["autodocs"],
-  component: "wc-top-nav-primary-link",
+  component: "wc-top-nav-link",
   args: {
     innerHTML: "Primary link",
     href: "#",
   },
-} satisfies Meta<PrimaryLinkProps>
+} satisfies Meta<LinkProps>
 
 export default meta
-type Story = StoryObj<PrimaryLinkProps>
+type Story = StoryObj<LinkProps>
 
 export const Default: Story = {}
 

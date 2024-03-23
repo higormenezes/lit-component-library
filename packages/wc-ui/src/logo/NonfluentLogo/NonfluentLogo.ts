@@ -9,10 +9,11 @@ export class NonfluentLogo extends LitElement {
       align-items: center;
       justify-content: center;
       gap: var(--wc-space-50);
+      padding: var(--wc-space-25) var(--wc-space-50);
 
       font-family: "Poppins", sans-serif;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1;
       letter-spacing: 0.75px;
       color: var(--wc-color-text-subtle);

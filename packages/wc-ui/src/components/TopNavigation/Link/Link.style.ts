@@ -1,11 +1,11 @@
 import { css } from "lit"
 
-export const primaryLinkStyle = css`
+export const linkStyle = css`
   :host {
     display: contents;
   }
 
-  :host .wc-top-nav-primary-link {
+  :host .wc-top-nav-link {
     appearance: none;
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ export const primaryLinkStyle = css`
     align-items: center;
     justify-content: center;
 
-    & .wc-top-nav-primary-link__content-box {
+    & .wc-top-nav-link__content-box {
       outline: 2px solid transparent;
       outline-offset: 5px;
 
@@ -46,7 +46,7 @@ export const primaryLinkStyle = css`
       color: var(--wc-color-text-subtle);
     }
 
-    &.wc-top-nav-primary-link--selected {
+    &.wc-top-nav-link--selected {
       &::after {
         content: "";
         position: absolute;
@@ -58,13 +58,13 @@ export const primaryLinkStyle = css`
         background: var(--wc-color-border-selected);
       }
 
-      & .wc-top-nav-primary-link__content-box {
+      & .wc-top-nav-link__content-box {
         background: transparent;
         color: var(--wc-color-text-selected);
       }
     }
 
-    &:focus .wc-top-nav-primary-link__content-box {
+    &:focus .wc-top-nav-link__content-box {
       transition:
         background 150ms,
         color 150ms,
@@ -74,12 +74,12 @@ export const primaryLinkStyle = css`
       outline-offset: 2px;
     }
 
-    &:hover .wc-top-nav-primary-link__content-box {
+    &:hover .wc-top-nav-link__content-box {
       background: var(--wc-color-background-neutral-subtle-hovered);
       color: var(--wc-color-text-subtle);
     }
 
-    &:active .wc-top-nav-primary-link__content-box {
+    &:active .wc-top-nav-link__content-box {
       background: var(--wc-color-background-neutral-subtle-pressed);
       color: var(--wc-color-text-subtle);
     }
