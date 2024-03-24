@@ -57,12 +57,19 @@ export class Input extends LitElement {
   @property({ type: String, reflect: true })
   slot: string = "wc-input-element"
 
+  @property({ type: String, reflect: true, attribute: "aria-describedby" })
+  ariaDescribedby: string = "helper-text"
+
   render() {
     const classes = classMap({
       "wc-input": true,
     })
 
-    return html`<input class="${classes}" placeholder="Placeholder" />`
+    return html`<input
+      class="${classes}"
+      placeholder="Placeholder"
+      aria-describedby="${this.ariaDescribedby}"
+    />`
   }
 }
 
